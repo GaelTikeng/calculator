@@ -13,6 +13,7 @@ body {
 .keys {
   width: 25%;
   min-width: 360px;
+  margin-top: 10px;
   border-radius: 5px;
   height: fit-content;
   padding: 10px 0;
@@ -96,8 +97,8 @@ button:hover {
 }
 
 @media screen and (max-width: 600px) {
-  .main_container {
-    width: 100%;
+  .keys {
+    width: 96%;
   }
 
   #data-equal {

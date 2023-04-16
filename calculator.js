@@ -14,19 +14,37 @@ for (let key of keys) {
     } else if (value =="del") {
       input = input.slice(0, -1)
       display_input.innerHTML = input
-    } else if (value == "=") {
-      let result = eval(input)
-      display_output.innerHTML = result
-    } else {
-      input += value
+    } else if (value == "pi") {
+      let input = Math.PI
       display_input.innerHTML = input
-
+    }
+     else if (value == "=") {
+      let result = eval(input)
+      display_output.innerHTML = CleanOutput(result)
+    } else {
+      if (ValidationInput(value)) {
+        input += value
+        display_input.innerHTML = input
+      }
+      
     } 
 
   })
  
 }
 
+function sinhyperbolic(a) {
+  let x1 = Math.sinh(a)
+  display_output.document.innerHTML = x1
+}
+
+function coshyperbolic(b) {
+  display_output.document.innerHTML =Math.cosh(b)
+}
+
+function tanhyperbolic(c) {
+  display_output.document.innerHTML = Math.tanh(c)
+}
 
 
 
@@ -48,9 +66,9 @@ function ValidationInput (value) {
 }
 
 function CleanOutput (output) {
-  let output_string = output.tostring()
+  let output_string = output.toString()
   let decimal = output_string.split(",")[1]
-  output_string = output_String.split(",")[0]
+  output_string = output_string.split(",")[0]
 
   let output_array = output_string.split("")
   
@@ -67,7 +85,7 @@ function CleanOutput (output) {
 
 }
 
-function ClearInput (input) {
+function CleanInput (input) {
   let input_array = input.split("")
   let length = input_array.length
 
@@ -75,7 +93,7 @@ function ClearInput (input) {
     if (input_array[i] == "*") {
       input_array[i] = ` <span class="operator">x</span> `
     } else if (input_array[i] == "/") {
-      input_array[i] = ` <span class="null">÷</span> `
+      input_array[i] = ` <span class="operator">÷</span> `
     }
   }
 }
