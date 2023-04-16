@@ -10,11 +10,29 @@ body {
   background: #000;
 }
 
-.main_container {
+.keys {
   width: 25%;
+  min-width: 360px;
+  border-radius: 5px;
   height: fit-content;
-  padding: 20px 0;
+  padding: 10px 0;
   border: 1px solid #fff;
+}
+
+.display {
+  min-height: 100px;
+  padding: 1.5rem;
+  /* display: flex; */
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #fff;
+  text-align: right;
+}
+
+.output {
+  padding-top: 15px;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 .line1,
