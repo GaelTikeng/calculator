@@ -7,14 +7,33 @@
 body {
   padding: 0;
   margin: 0;
-  background: #312f2f;
+  background: #000;
 }
 
-.main_container {
+.keys {
   width: 25%;
+  min-width: 360px;
+  margin-top: 10px;
+  border-radius: 5px;
   height: fit-content;
-  padding: 20px 0;
+  padding: 10px 0;
   border: 1px solid #fff;
+}
+
+.display {
+  min-height: 100px;
+  padding: 1.5rem;
+  /* display: flex; */
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #fff;
+  text-align: right;
+}
+
+.output {
+  padding-top: 15px;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 .line1,
@@ -61,13 +80,28 @@ body {
   background: #f48a14;
   border: none;
   border-radius: 5px;
-  padding: 0 45px;
+  padding: 0 50px;
 }
 
 .pi {
   padding: 0 30px !important;
 }
 
+button {
+  background: #b3afaf;
+}
+
 button:hover {
   cursor: pointer;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 600px) {
+  .keys {
+    width: 96%;
+  }
+
+  #data-equal {
+    padding: 0 55px;
+  }
 }
