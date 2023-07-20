@@ -1,9 +1,8 @@
 const display_input = document.querySelector('.input')
 const display_output = document.querySelector('.output')
 const keys = document.getElementsByClassName('key')
-
+const operators = document.getElementsByClassName('operator')
 let input = ""
-
 for (let key of keys) {
   const value = key.dataset.key
   key.addEventListener('click', () => {
@@ -26,11 +25,8 @@ for (let key of keys) {
         input += value
         display_input.innerHTML = input
       }
-      
     } 
-
   })
- 
 }
 
 function sinhyperbolic(a) {
@@ -39,15 +35,12 @@ function sinhyperbolic(a) {
 }
 
 function coshyperbolic(b) {
-  display_output.document.innerHTML =Math.cosh(b)
+  display_output.document.innerHTML = Math.cosh(b)
 }
 
 function tanhyperbolic(c) {
   display_output.document.innerHTML = Math.tanh(c)
 }
-
-
-
 
 function ValidationInput (value) {
   let last_input = input.slice(-1)
@@ -77,12 +70,13 @@ function CleanOutput (output) {
       output_array.splice(i, 0, ",")
     }
   }
+
   if (decimal) {
     output_array.push(".")
     output_array.push(decimal)
   }
-  return output_array.join("")
 
+  return output_array.join("")
 }
 
 function CleanInput (input) {

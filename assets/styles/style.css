@@ -11,19 +11,17 @@ body {
 }
 
 .keys {
-  width: 25%;
-  min-width: 360px;
+  width: 360px;
   margin-top: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
   height: fit-content;
-  padding: 10px 0;
+  padding: 10px 0 0;
   border: 1px solid #fff;
 }
 
 .display {
   min-height: 100px;
   padding: 1.5rem;
-  /* display: flex; */
   justify-content: flex-end;
   align-items: flex-end;
   color: #fff;
@@ -34,6 +32,11 @@ body {
   padding-top: 15px;
   font-weight: 700;
   font-size: 25px;
+}
+
+.clipbord {
+  border-radius: 15px;
+  background: #8b878371;
 }
 
 .line1,
@@ -98,7 +101,9 @@ button:hover {
 
 @media screen and (max-width: 600px) {
   .keys {
-    width: 96%;
+    width: 96vw;
+    height: 95%;
+    margin: 10px auto;
   }
 
   #data-equal {
