@@ -51,7 +51,7 @@ body {
   padding: 10px 0;
 }
 
-#data-number {
+.data-number {
   border: none;
   padding: 10px 25px;
   border-radius: 5px;
@@ -59,7 +59,7 @@ body {
 
 }
 
-#data-operation {
+.data-operation {
   border: none;
   border-radius: 5px;
   padding: 5px 10px;

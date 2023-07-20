@@ -44,15 +44,15 @@ function tanHyperbolic(c) {
 }
 
 function ValidationInput (value) {
-  let last_input = input.slice(-1)
+  let lastInput = input.slice(-1)
   let operators = ['+', '-', '*', '/']
   
-  if (value === '.' && last_input ==='.') {
+  if (value === '.' && lastInput ==='.') {
     return false
   }
 
   if (operators.includes(value)) {
-    if (operators.includes(last_input)) {
+    if (operators.includes(lastInput)) {
       return  false
     } else return true
   }
@@ -60,35 +60,35 @@ function ValidationInput (value) {
 }
 
 function CleanOutput (output) {
-  let output_string = output.toString()
-  let decimal = output_string.split(',')[1]
-  output_string = output_string.split(',')[0]
+  let outputString = output.toString()
+  let decimal = outputString.split(',')[1]
+  outputString = outputString.split(',')[0]
 
-  let output_array = output_string.split('')
-  
-  if (output_array.length > 3) {
-    for (let i=output_array.length - 3; i > 0; i -= 3) {
-      output_array.splice(i, 0, ',')
+  let outputArray = outputString.split('')
+  // Insert a commar in the result after 3 digits
+  if (outputArray.length > 3) {
+    for (let i = outputArray.length - 3; i > 0; i -= 3) {
+      outputArray.splice(i, 0, ',')
     }
   }
 
   if (decimal) {
-    output_array.push('.')
-    output_array.push(decimal)
+    outputArray.push('.')
+    outputArray.push(decimal)
   }
-
-  return output_array.join('')
+  return outputArray.join('')
 }
 
+// Cleanup function
 function CleanInput (input) {
-  let input_array = input.split('')
-  let length = input_array.length
+  let inputArray = input.split('')
+  let length = inputArray.length
 
   for (let i = 0; i < length; i ++) {
-    if (input_array[i] == '*') {
-      input_array[i] = `<span class='operator'>x</span> `
-    } else if (input_array[i] === '/') {
-      input_array[i] = ` <span class='operator'>÷</span> `
+    if (inputArray[i] === '*') {
+      inputArray[i] = `<span class='operator'>x</span> `
+    } else if (inputArray[i] === '/') {
+      inputArray[i] = `<span class='operator'>÷</span> `
     }
   }
 }
