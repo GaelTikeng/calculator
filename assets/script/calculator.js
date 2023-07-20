@@ -1,5 +1,5 @@
-const display_input = document.querySelector('.input')
-const display_output = document.querySelector('.output')
+const displayInput = document.querySelector('.input')
+const displayOutput = document.querySelector('.output')
 const keys = document.getElementsByClassName('key')
 const operators = document.getElementsByClassName('operator')
 let input = ''
@@ -8,39 +8,39 @@ for (let key of keys) {
   key.addEventListener('click', () => {
     if (value === 'clear') {
       input = ''
-      display_input.innerHTML = ''
-      display_output.innerHTML = ''
+      displayInput.innerHTML = ''
+      displayOutput.innerHTML = ''
     } else
     if (value ==='del') {
       input = input.slice(0, -1)
-      display_input.innerHTML = input
+      displayInput.innerHTML = input
     } else
     if (value === 'pi') {
       let input = Math.PI
-      display_input.innerHTML = input
+      displayInput.innerHTML = input
     } else
     if (value === '=') {
       let result = eval(input)
-      display_output.innerHTML = CleanOutput(result)
+      displayOutput.innerHTML = CleanOutput(result)
     } else
     if (ValidationInput(value)) {
       input += value
-      display_input.innerHTML = input
+      displayInput.innerHTML = input
     }
   })
 }
 
-function sinhyperbolic(a) {
+function sinHyperbolic(a) {
   let x1 = Math.sinh(a)
-  display_output.document.innerHTML = x1
+  displayOutput.document.innerHTML = x1
 }
 
-function coshyperbolic(b) {
-  display_output.document.innerHTML = Math.cosh(b)
+function cosHyperbolic(b) {
+  displayOutput.document.innerHTML = Math.cosh(b)
 }
 
-function tanhyperbolic(c) {
-  display_output.document.innerHTML = Math.tanh(c)
+function tanHyperbolic(c) {
+  displayOutput.document.innerHTML = Math.tanh(c)
 }
 
 function ValidationInput (value) {
